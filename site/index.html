@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ultra X 50km Training</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M3 24l8-12 5 7 4-5 9 10z' fill='%232a78d6'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Ultra X Spring 50km</h1>
+      <p class="sub" id="sub">Training tracker for Murray and Rich</p>
+    </div>
+    <div class="head-right">
+      <div class="countdown" id="countdown"></div>
+      <button id="theme" class="ghost" aria-label="Toggle light and dark theme">Theme</button>
+    </div>
+  </header>
+  <div id="banner" class="banner" hidden></div>
+  <nav class="tabs" role="tablist" id="tabs"></nav>
+  <main id="main"><p class="muted">Loading…</p></main>
+  <footer>
+    <h2>How the plan adapts</h2>
+    <ul>
+      <li><strong>Ramp cap:</strong> a long run never exceeds 12% above the longest of your last three completed long runs, so a missed run repeats distance until you catch up.</li>
+      <li><strong>Two misses in a row</strong> (under 70% of plan) lower the reference by 25%.</li>
+      <li><strong>Fatigue:</strong> two or more 8km+ runs in 14 days well above the easy heart-rate ceiling cut the next three long runs by 10%.</li>
+      <li><strong>Volume shortfall:</strong> two weeks under 60% of planned distance cut the next three long runs by 15%.</li>
+      <li>Plans are never increased above the original, and race week is never changed. Run <code>config/overrides.json</code> to flag a niggle or set a distance by hand.</li>
+    </ul>
+    <p class="muted">Route maps hide the first and last 500 m of each run. General training guidance only, not medical advice. Data from Apple Health.</p>
+  </footer>
+</div>
+<div id="tip" class="tip" role="status" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

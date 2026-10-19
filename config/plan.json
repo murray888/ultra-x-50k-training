@@ -1,0 +1,1219 @@
+{
+ "race": {
+  "name": "Ultra X Spring Trail Series 50km",
+  "date": "2027-04-17",
+  "distance_km": 50,
+  "start": "09:00",
+  "location": "Cowdray Estate, Midhurst (confirm venue with the race pack)"
+ },
+ "athletes": {
+  "murray": {
+   "name": "Murray",
+   "easy_hr_ceiling": 150,
+   "colour_slot": 1
+  },
+  "rich": {
+   "name": "Rich",
+   "easy_hr_ceiling": null,
+   "colour_slot": 2
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "monday": "2026-10-19",
+   "saturday": "2026-10-24",
+   "sunday": "2026-10-25",
+   "phase": "Base",
+   "cutback": false,
+   "shared_long": false,
+   "note": "Murray: away, long run moved to Sun 25 Oct.",
+   "athletes": {
+    "murray": {
+     "long_km": 12,
+     "long_date": "2026-10-25",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Easy + 6 x 20s strides",
+       "km": 5
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 4
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 5.4,
+     "long_date": "2026-10-24",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "25 min easy",
+       "km": 3.8
+      },
+      {
+       "label": "Thu",
+       "desc": "25 min easy",
+       "km": 3.8
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 2,
+   "monday": "2026-10-26",
+   "saturday": "2026-10-31",
+   "sunday": "2026-11-01",
+   "phase": "Base",
+   "cutback": false,
+   "shared_long": false,
+   "note": "Murray: travelling, long run moved to Fri 30 Oct.",
+   "athletes": {
+    "murray": {
+     "long_km": 13,
+     "long_date": "2026-10-30",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Easy + 6 x 20s strides",
+       "km": 6
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 5
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 6.9,
+     "long_date": "2026-10-31",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "30 min easy",
+       "km": 4.6
+      },
+      {
+       "label": "Thu",
+       "desc": "30 min easy + 4 strides",
+       "km": 4.6
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 3,
+   "monday": "2026-11-02",
+   "saturday": "2026-11-07",
+   "sunday": "2026-11-08",
+   "phase": "Base",
+   "cutback": false,
+   "shared_long": false,
+   "note": "Murray: travelling, no long run this week. Midweek runs optional.",
+   "athletes": {
+    "murray": {
+     "long_km": 0,
+     "long_date": null,
+     "optional": true,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Easy + 6 x 20s strides",
+       "km": 6
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 5
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 7.7,
+     "long_date": "2026-11-07",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "30 min easy",
+       "km": 4.6
+      },
+      {
+       "label": "Thu",
+       "desc": "30 min easy + 4 strides",
+       "km": 4.6
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 4,
+   "monday": "2026-11-09",
+   "saturday": "2026-11-14",
+   "sunday": "2026-11-15",
+   "phase": "Base",
+   "cutback": false,
+   "shared_long": true,
+   "note": "First shared Saturday run. Murray lands back Wed 11 Nov, so keep it easy.",
+   "athletes": {
+    "murray": {
+     "long_km": 10,
+     "long_date": "2026-11-14",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Easy + 6 x 20s strides",
+       "km": 5
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 4
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 10,
+     "long_date": "2026-11-14",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "30 min easy",
+       "km": 4.6
+      },
+      {
+       "label": "Thu",
+       "desc": "30 min easy + 4 strides",
+       "km": 4.6
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 5,
+   "monday": "2026-11-16",
+   "saturday": "2026-11-21",
+   "sunday": "2026-11-22",
+   "phase": "Base",
+   "cutback": false,
+   "shared_long": true,
+   "note": "",
+   "athletes": {
+    "murray": {
+     "long_km": 13,
+     "long_date": "2026-11-21",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Easy + 6 x 20s strides",
+       "km": 6
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 5
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 13,
+     "long_date": "2026-11-21",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "40 min easy",
+       "km": 6.2
+      },
+      {
+       "label": "Thu",
+       "desc": "35 min easy + 6 strides",
+       "km": 5.4
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 6,
+   "monday": "2026-11-23",
+   "saturday": "2026-11-28",
+   "sunday": "2026-11-29",
+   "phase": "Base",
+   "cutback": true,
+   "shared_long": true,
+   "note": "Cutback week.",
+   "athletes": {
+    "murray": {
+     "long_km": 10,
+     "long_date": "2026-11-28",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Easy (cutback)",
+       "km": 5
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 4
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 10,
+     "long_date": "2026-11-28",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "30 min easy",
+       "km": 4.6
+      },
+      {
+       "label": "Thu",
+       "desc": "30 min easy",
+       "km": 4.6
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 7,
+   "monday": "2026-11-30",
+   "saturday": "2026-12-05",
+   "sunday": "2026-12-06",
+   "phase": "Base",
+   "cutback": false,
+   "shared_long": true,
+   "note": "",
+   "athletes": {
+    "murray": {
+     "long_km": 16,
+     "long_date": "2026-12-05",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Easy + 6 x 20s strides",
+       "km": 7
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 5
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 16,
+     "long_date": "2026-12-05",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "45 min easy",
+       "km": 6.9
+      },
+      {
+       "label": "Thu",
+       "desc": "40 min easy + 6 strides",
+       "km": 6.2
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 8,
+   "monday": "2026-12-07",
+   "saturday": "2026-12-12",
+   "sunday": "2026-12-13",
+   "phase": "Base",
+   "cutback": false,
+   "shared_long": true,
+   "note": "",
+   "athletes": {
+    "murray": {
+     "long_km": 18,
+     "long_date": "2026-12-12",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Easy + 6 x 20s strides",
+       "km": 7
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 5
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 18,
+     "long_date": "2026-12-12",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "45 min, last 10 steady",
+       "km": 6.9
+      },
+      {
+       "label": "Thu",
+       "desc": "40 min easy + 6 strides",
+       "km": 6.2
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 9,
+   "monday": "2026-12-14",
+   "saturday": "2026-12-19",
+   "sunday": "2026-12-20",
+   "phase": "Aerobic build",
+   "cutback": false,
+   "shared_long": true,
+   "note": "",
+   "athletes": {
+    "murray": {
+     "long_km": 18,
+     "long_date": "2026-12-19",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Hill repeats (hard up, jog down)",
+       "km": 7
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 6
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 18,
+     "long_date": "2026-12-19",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "50 min incl 3 x 8 min tempo",
+       "km": 7.7
+      },
+      {
+       "label": "Thu",
+       "desc": "40 min incl 6 x 60s hills",
+       "km": 6.2
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 10,
+   "monday": "2026-12-21",
+   "saturday": "2026-12-26",
+   "sunday": "2026-12-27",
+   "phase": "Aerobic build",
+   "cutback": true,
+   "shared_long": true,
+   "note": "Cutback week (Boxing Day weekend).",
+   "athletes": {
+    "murray": {
+     "long_km": 14,
+     "long_date": "2026-12-26",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Easy (cutback)",
+       "km": 6
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 5
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 14,
+     "long_date": "2026-12-26",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "40 min easy",
+       "km": 6.2
+      },
+      {
+       "label": "Thu",
+       "desc": "35 min easy",
+       "km": 5.4
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 11,
+   "monday": "2026-12-28",
+   "saturday": "2027-01-02",
+   "sunday": "2027-01-03",
+   "phase": "Aerobic build",
+   "cutback": false,
+   "shared_long": true,
+   "note": "",
+   "athletes": {
+    "murray": {
+     "long_km": 21,
+     "long_date": "2027-01-02",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Hill repeats (hard up, jog down)",
+       "km": 8
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 6
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 21,
+     "long_date": "2027-01-02",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "55 min incl 20 min tempo",
+       "km": 8.5
+      },
+      {
+       "label": "Thu",
+       "desc": "45 min incl 8 x 75s hills",
+       "km": 6.9
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 12,
+   "monday": "2027-01-04",
+   "saturday": "2027-01-09",
+   "sunday": "2027-01-10",
+   "phase": "Aerobic build",
+   "cutback": false,
+   "shared_long": true,
+   "note": "",
+   "athletes": {
+    "murray": {
+     "long_km": 23,
+     "long_date": "2027-01-09",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Steady 20-40 min at HR 155-165",
+       "km": 8
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 6
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 23,
+     "long_date": "2027-01-09",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "60 min incl 2 x 15 min tempo",
+       "km": 9.2
+      },
+      {
+       "label": "Thu",
+       "desc": "50 min incl 8 x 90s hills",
+       "km": 7.7
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 13,
+   "monday": "2027-01-11",
+   "saturday": "2027-01-16",
+   "sunday": "2027-01-17",
+   "phase": "Specific build",
+   "cutback": false,
+   "shared_long": true,
+   "note": "",
+   "athletes": {
+    "murray": {
+     "long_km": 25,
+     "long_date": "2027-01-16",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Steady 20-40 min at HR 155-165",
+       "km": 8
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 6
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 25,
+     "long_date": "2027-01-16",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "60 min incl 30 min tempo",
+       "km": 9.2
+      },
+      {
+       "label": "Thu",
+       "desc": "50 min incl 10 x 60s hills",
+       "km": 7.7
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 14,
+   "monday": "2027-01-18",
+   "saturday": "2027-01-23",
+   "sunday": "2027-01-24",
+   "phase": "Specific build",
+   "cutback": false,
+   "shared_long": true,
+   "note": "",
+   "athletes": {
+    "murray": {
+     "long_km": 27,
+     "long_date": "2027-01-23",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Steady 20-40 min at HR 155-165",
+       "km": 8
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 6
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 27,
+     "long_date": "2027-01-23",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "60 min steady",
+       "km": 9.2
+      },
+      {
+       "label": "Thu",
+       "desc": "50 min incl 6 x 2 min hills",
+       "km": 7.7
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 15,
+   "monday": "2027-01-25",
+   "saturday": "2027-01-30",
+   "sunday": "2027-01-31",
+   "phase": "Specific build",
+   "cutback": false,
+   "shared_long": true,
+   "note": "",
+   "athletes": {
+    "murray": {
+     "long_km": 28,
+     "long_date": "2027-01-30",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Steady 20-40 min at HR 155-165",
+       "km": 9
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 6
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 28,
+     "long_date": "2027-01-30",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "65 min incl 3 x 10 min tempo",
+       "km": 10.0
+      },
+      {
+       "label": "Thu",
+       "desc": "55 min incl 6 x 2 min hills",
+       "km": 8.5
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 16,
+   "monday": "2027-02-01",
+   "saturday": "2027-02-06",
+   "sunday": "2027-02-07",
+   "phase": "Specific build",
+   "cutback": true,
+   "shared_long": true,
+   "note": "Cutback week.",
+   "athletes": {
+    "murray": {
+     "long_km": 18,
+     "long_date": "2027-02-06",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Easy (cutback)",
+       "km": 7
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 5
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 18,
+     "long_date": "2027-02-06",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "45 min easy",
+       "km": 6.9
+      },
+      {
+       "label": "Thu",
+       "desc": "40 min easy",
+       "km": 6.2
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 17,
+   "monday": "2027-02-08",
+   "saturday": "2027-02-13",
+   "sunday": "2027-02-14",
+   "phase": "Specific build",
+   "cutback": false,
+   "shared_long": true,
+   "note": "",
+   "athletes": {
+    "murray": {
+     "long_km": 29,
+     "long_date": "2027-02-13",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Steady 20-40 min at HR 155-165",
+       "km": 9
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 7
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 29,
+     "long_date": "2027-02-13",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "65 min incl 30 min tempo",
+       "km": 10.0
+      },
+      {
+       "label": "Thu",
+       "desc": "55 min incl 8 x 2 min hills",
+       "km": 8.5
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 18,
+   "monday": "2027-02-15",
+   "saturday": "2027-02-20",
+   "sunday": "2027-02-21",
+   "phase": "Specific build",
+   "cutback": false,
+   "shared_long": true,
+   "note": "Longest run so far. Hilly trail if possible.",
+   "athletes": {
+    "murray": {
+     "long_km": 32,
+     "long_date": "2027-02-20",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Steady 20-40 min at HR 155-165",
+       "km": 10
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 7
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 32,
+     "long_date": "2027-02-20",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "65 min steady",
+       "km": 10.0
+      },
+      {
+       "label": "Thu",
+       "desc": "55 min incl 8 x 2 min hills",
+       "km": 8.5
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 19,
+   "monday": "2027-02-22",
+   "saturday": "2027-02-27",
+   "sunday": "2027-02-28",
+   "phase": "Specific build",
+   "cutback": false,
+   "shared_long": true,
+   "note": "",
+   "athletes": {
+    "murray": {
+     "long_km": 30,
+     "long_date": "2027-02-27",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Steady 20-40 min at HR 155-165",
+       "km": 10
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 7
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 30,
+     "long_date": "2027-02-27",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "65 min incl 2 x 15 min tempo",
+       "km": 10.0
+      },
+      {
+       "label": "Thu",
+       "desc": "55 min incl 8 x 2 min hills",
+       "km": 8.5
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 20,
+   "monday": "2027-03-01",
+   "saturday": "2027-03-06",
+   "sunday": "2027-03-07",
+   "phase": "Specific build",
+   "cutback": true,
+   "shared_long": true,
+   "note": "Cutback week.",
+   "athletes": {
+    "murray": {
+     "long_km": 20,
+     "long_date": "2027-03-06",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Easy (cutback)",
+       "km": 8
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 6
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 20,
+     "long_date": "2027-03-06",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "45 min easy",
+       "km": 6.9
+      },
+      {
+       "label": "Thu",
+       "desc": "40 min easy",
+       "km": 6.2
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 21,
+   "monday": "2027-03-08",
+   "saturday": "2027-03-13",
+   "sunday": "2027-03-14",
+   "phase": "Peak",
+   "cutback": false,
+   "shared_long": true,
+   "note": "",
+   "athletes": {
+    "murray": {
+     "long_km": 30,
+     "long_date": "2027-03-13",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Steady 20-40 min at HR 155-165",
+       "km": 10
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 7
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 30,
+     "long_date": "2027-03-13",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "65 min incl 30 min tempo",
+       "km": 10.0
+      },
+      {
+       "label": "Thu",
+       "desc": "55 min incl 8 x 2 min hills",
+       "km": 8.5
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 22,
+   "monday": "2027-03-15",
+   "saturday": "2027-03-20",
+   "sunday": "2027-03-21",
+   "phase": "Peak",
+   "cutback": false,
+   "shared_long": true,
+   "note": "",
+   "athletes": {
+    "murray": {
+     "long_km": 27,
+     "long_date": "2027-03-20",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Steady 20-40 min at HR 155-165",
+       "km": 9
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 6
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 27,
+     "long_date": "2027-03-20",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "70 min steady",
+       "km": 10.8
+      },
+      {
+       "label": "Thu",
+       "desc": "55 min incl 6 x 3 min hills",
+       "km": 8.5
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 23,
+   "monday": "2027-03-22",
+   "saturday": "2027-03-27",
+   "sunday": "2027-03-28",
+   "phase": "Peak",
+   "cutback": false,
+   "shared_long": true,
+   "note": "Dress rehearsal: full race kit and about 900m+ of climbing.",
+   "athletes": {
+    "murray": {
+     "long_km": 33,
+     "long_date": "2027-03-27",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Steady 20-40 min at HR 155-165",
+       "km": 8
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 6
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 33,
+     "long_date": "2027-03-27",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "60 min incl 20 min tempo",
+       "km": 9.2
+      },
+      {
+       "label": "Thu",
+       "desc": "50 min easy",
+       "km": 7.7
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 24,
+   "monday": "2027-03-29",
+   "saturday": "2027-04-03",
+   "sunday": "2027-04-04",
+   "phase": "Taper",
+   "cutback": false,
+   "shared_long": true,
+   "note": "Taper begins.",
+   "athletes": {
+    "murray": {
+     "long_km": 22,
+     "long_date": "2027-04-03",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Short steady effort",
+       "km": 6
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 5
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 22,
+     "long_date": "2027-04-03",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "55 min incl 15 min tempo",
+       "km": 8.5
+      },
+      {
+       "label": "Thu",
+       "desc": "45 min easy",
+       "km": 6.9
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 25,
+   "monday": "2027-04-05",
+   "saturday": "2027-04-10",
+   "sunday": "2027-04-11",
+   "phase": "Taper",
+   "cutback": false,
+   "shared_long": true,
+   "note": "",
+   "athletes": {
+    "murray": {
+     "long_km": 12,
+     "long_date": "2027-04-10",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "3 x 5 min at race effort",
+       "km": 5
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 4
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 12,
+     "long_date": "2027-04-10",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "45 min incl 3 x 5 min at race effort",
+       "km": 6.9
+      },
+      {
+       "label": "Thu",
+       "desc": "40 min easy",
+       "km": 6.2
+      }
+     ]
+    }
+   }
+  },
+  {
+   "week": 26,
+   "monday": "2027-04-12",
+   "saturday": "2027-04-17",
+   "sunday": "2027-04-18",
+   "phase": "Race",
+   "cutback": false,
+   "shared_long": true,
+   "note": "RACE WEEK: Ultra X Spring Trail Series 50km, Sat 17 April, 9am start.",
+   "athletes": {
+    "murray": {
+     "long_km": 50,
+     "long_date": "2027-04-17",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Run A",
+       "desc": "Easy + strides",
+       "km": 5
+      },
+      {
+       "label": "Run B",
+       "desc": "Easy, HR up to 150",
+       "km": 3
+      }
+     ]
+    },
+    "rich": {
+     "long_km": 50,
+     "long_date": "2027-04-17",
+     "optional": false,
+     "runs": [
+      {
+       "label": "Tue",
+       "desc": "40 min easy + 4 strides",
+       "km": 6.2
+      },
+      {
+       "label": "Thu",
+       "desc": "25 min easy shakeout",
+       "km": 3.8
+      }
+     ]
+    }
+   }
+  }
+ ]
+}
