@@ -12,6 +12,8 @@ for name in ("adjusted.json", "commentary.json", "meta.json", "activities_murray
     src = ROOT / "data" / name
     if src.exists():
         shutil.copy(src, DIST / "data" / name)
+if (ROOT / "log" / "checkins.json").exists():
+    shutil.copy(ROOT / "log" / "checkins.json", DIST / "data" / "log.json")
 shutil.copy(ROOT / "config" / "plan.json", DIST / "data" / "plan.json")
 (DIST / ".nojekyll").write_text("")
 print("Site built in", DIST)

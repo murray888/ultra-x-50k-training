@@ -24,6 +24,9 @@ runs/*.json --> scripts/load_runs.py --> scripts/adapt.py (rules) --> scripts/co
 4. Optional: add an `ANTHROPIC_API_KEY` repository secret to enable the weekly Claude coaching note.
 5. **Actions > Update training site > Run workflow** for the first build. Site: `https://<username>.github.io/<repository>/`.
 
+## Weekly check-ins (ticks and notes)
+Each athlete's tab has a week check-in card: tick Run A/B and the long run, add a note (max 280 characters), then Save. Signing in uses the same GitHub token as the upload Shortcut, kept in that browser's localStorage. Saves are commits to `log/checkins.json`, so notes are public and ticks never change the plan. The site rebuilds after each save.
+
 ## Backfilling history
 `runs/<athlete>.json` holds the run history. To load older runs, send the same payload the Shortcut sends:
 `PAYLOAD="$(cat backfill.json)" python scripts/ingest.py`, then commit `runs/`.

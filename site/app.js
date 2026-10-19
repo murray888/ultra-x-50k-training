@@ -30,6 +30,7 @@ async function load() {
     "data/meta.json", "data/activities_murray.json", "data/activities_rich.json"].map(get));
   D.adj = adj; D.plan = plan; D.commentary = (com && com.notes) || {}; D.meta = meta || {};
   D.acts = { murray: m || [], rich: r || [] };
+  await loadLog(get);
 }
 
 /* ---------- charts ---------- */
@@ -191,10 +192,11 @@ function planTable(key) {
       h("td", {}, w.actual_long ? km(w.actual_long) : "–"),
       h("td", {}, km(w.actual_km), h("small", {}, "plan " + km(w.planned_km))),
       h("td", {}, chip(w.status)),
+      h("td", {}, checkinCell(key, w, at)),
       h("td", {}, at.runs.map(r => h("small", {}, `${r.label}: ${r.desc} (${km(r.km)})`)), p.note ? h("small", {}, p.note) : null));
   });
   return h("div", {}, h("h2", {}, `${a.name}: week by week`), h("div", { class: "table-wrap" },
-    h("table", {}, h("thead", {}, h("tr", {}, ["Wk", "Long run", "Long (target)", "Long (actual)", "Distance", "Status", "Sessions and notes"].map(x => h("th", {}, x)))), h("tbody", {}, rows))));
+    h("table", {}, h("thead", {}, h("tr", {}, ["Wk", "Long run", "Long (target)", "Long (actual)", "Distance", "Status", "Check-in", "Sessions and notes"].map(x => h("th", {}, x)))), h("tbody", {}, rows))));
 }
 
 function routeSvg(route) {
@@ -214,11 +216,115 @@ function recentRuns(key) {
       h("span", {}, `${fmtDate(r.date)} · ${km(r.distance_km)} · ${paceStr(r.moving_s / 60 / r.distance_km)}/km` + (r.avg_hr ? ` · HR ${Math.round(r.avg_hr)}` : "") + ` · ${r.elev_m} m`)))));
 }
 
+/* ---------- weekly check-ins (ticks and notes), stored in log/checkins.json via the GitHub API ---------- */
+const REPO = "murray888/ultra-x-50k-training", LOGPATH = "log/checkins.json";
+const CK = { log: {}, token: "", sel: {}, draft: {}, msg: {}, signin: false };
+try { CK.token = localStorage.getItem("gh_token") || ""; } catch {}
+const b64 = t => btoa(unescape(encodeURIComponent(t)));
+const unb64 = t => decodeURIComponent(escape(atob(t.replace(/\s/g, ""))));
+function ghHeaders(auth = true) {
+  const hd = { Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28" };
+  if (auth && CK.token) hd.Authorization = "Bearer " + CK.token;
+  return hd;
+}
+async function ghGet() {
+  const url = `https://api.github.com/repos/${REPO}/contents/${LOGPATH}?ref=main`;
+  let r = await fetch(url, { cache: "no-store", headers: ghHeaders() });
+  if (r.status === 401) r = await fetch(url, { cache: "no-store", headers: ghHeaders(false) });
+  if (r.status === 404) return { log: {}, sha: null };
+  if (!r.ok) throw new Error("GitHub " + r.status);
+  const j = await r.json();
+  return { log: JSON.parse(unb64(j.content)), sha: j.sha };
+}
+async function loadLog(get) {
+  try { CK.log = (await ghGet()).log; }
+  catch { CK.log = (await get("data/log.json")) || {}; }
+}
+async function saveWeek(key, week) {
+  const d = CK.draft[key + "|" + week];
+  for (let i = 0; i < 3; i++) {
+    const { log, sha } = await ghGet();
+    (log[key] = log[key] || {})[week] = { done: d.done, note: d.note, updated: new Date().toISOString() };
+    const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${LOGPATH}`, {
+      method: "PUT", headers: ghHeaders(),
+      body: JSON.stringify({ message: `Check-in: ${key} week ${week}`, content: b64(JSON.stringify(log, null, 1)), branch: "main", ...(sha ? { sha } : {}) }) });
+    if (r.ok) { CK.log = log; delete CK.draft[key + "|" + week]; return; }
+    if (r.status !== 409 && r.status !== 422) throw new Error(r.status === 401 || r.status === 403 || r.status === 404 ? "Token rejected (needs Contents: Read and write on this repo)" : "GitHub " + r.status);
+  }
+  throw new Error("Someone else saved at the same moment. Try again.");
+}
+function sessionsFor(key, week) {
+  const p = D.plan.weeks[week - 1], at = p.athletes[key], aw = D.adj.athletes[key].weeks.find(x => x.week === week);
+  const long = aw && aw.adjusted_long != null ? aw.adjusted_long : at.long_km;
+  return [...at.runs.map(r => ({ id: r.label, text: `${r.label}: ${r.desc} (${km(r.km)})` })),
+    { id: "Long", text: `Long run: ${km(long)}${at.long_date ? ", " + fmtDate(at.long_date) : ""}${at.optional ? " (optional)" : ""}` }];
+}
+function defaultWeek(key) {
+  const sm = D.adj.athletes[key].summary;
+  return Math.min(Math.max(sm.current_week || 1, 1), D.plan.weeks.length);
+}
+function checkinCard(key) {
+  const a = D.adj.athletes[key], week = CK.sel[key] || (CK.sel[key] = defaultWeek(key)), dk = key + "|" + week;
+  const p = D.plan.weeks[week - 1], saved = (CK.log[key] || {})[week] || { done: {}, note: "" };
+  const cur = CK.draft[dk] || { done: { ...saved.done }, note: saved.note || "" };
+  const can = !!CK.token, card = h("div", { class: "card checkin" });
+  const go = n => { CK.sel[key] = Math.min(Math.max(week + n, 1), D.plan.weeks.length); card.replaceWith(checkinCard(key)); };
+  const logged = (D.acts[key] || []).filter(r => r.date >= p.monday && r.date <= p.sunday);
+  const save = h("button", { class: "primary" }, "Save");
+  const msg = h("span", { class: "muted" }, CK.msg[dk] || "");
+  const sync = () => { save.disabled = !can || !CK.draft[dk]; };
+  const touch = () => { CK.draft[dk] = cur; CK.msg[dk] = ""; msg.textContent = ""; sync(); };
+  card.append(h("h3", {}, h("i", { class: "dot", style: `background:${COLOURS[key]}` }), `${a.name}: week check-in`),
+    h("div", { class: "weeknav" }, h("button", { class: "ghost", "aria-label": "Previous week" }, "‹"),
+      h("b", {}, `Week ${week}`), h("span", { class: "muted" }, `${fmtDate(p.monday)} to ${fmtDate(p.sunday)}`),
+      h("button", { class: "ghost", "aria-label": "Next week" }, "›")));
+  const [prev, next] = card.querySelectorAll(".weeknav button");
+  prev.onclick = () => go(-1); next.onclick = () => go(1);
+  card.append(h("div", { class: "ticks" }, sessionsFor(key, week).map(x => {
+    const cb = h("input", { type: "checkbox" }); cb.checked = !!cur.done[x.id]; cb.disabled = !can;
+    cb.onchange = () => { cur.done[x.id] = cb.checked; touch(); };
+    return h("label", {}, cb, " " + x.text);
+  })));
+  const ta = h("textarea", { rows: "2", maxlength: "280", placeholder: can ? "Short note (public): how it felt, niggles, what changed" : "Sign in to add a note" });
+  ta.value = cur.note; ta.disabled = !can; ta.oninput = () => { cur.note = ta.value; touch(); };
+  card.append(ta, h("div", { class: "muted small" }, logged.length ? `Health uploads this week: ${logged.length} run${logged.length > 1 ? "s" : ""}, ${km(logged.reduce((t, r) => t + r.distance_km, 0))}` : "No Health uploads for this week yet."));
+  save.onclick = async () => {
+    save.disabled = true; msg.textContent = "Saving…";
+    try { await saveWeek(key, week); CK.msg[dk] = "Saved. The site refreshes in about a minute."; }
+    catch (e) { CK.msg[dk] = "Not saved: " + e.message; }
+    card.replaceWith(checkinCard(key));
+  };
+  sync();
+  const auth = h("div", { class: "auth muted small" });
+  if (can) {
+    auth.append("Signed in on this device. ", h("button", { class: "link" }, "Sign out"));
+    auth.querySelector("button").onclick = () => { CK.token = ""; try { localStorage.removeItem("gh_token"); } catch {} render(); };
+  } else if (CK.signin) {
+    const inp = h("input", { type: "password", placeholder: "GitHub token", autocomplete: "off" });
+    const ok = h("button", { class: "primary" }, "Use token");
+    ok.onclick = () => { CK.token = inp.value.trim(); CK.signin = false; try { localStorage.setItem("gh_token", CK.token); } catch {} render(); };
+    auth.append(inp, ok);
+  } else {
+    const b = h("button", { class: "link" }, "Sign in to tick and add notes");
+    b.onclick = () => { CK.signin = true; render(); };
+    auth.append(b);
+  }
+  card.append(h("div", { class: "actions" }, save, msg), auth);
+  return card;
+}
+const checkinCell = (key, w, at) => {
+  const e = (CK.log[key] || {})[w.week];
+  if (!e) return "–";
+  const ids = [...at.runs.map(r => r.label), "Long"];
+  return h("span", {}, ids.map(i => (e.done && e.done[i] ? "✓ " : "◻ ") + i).join("  "), e.note ? h("small", {}, e.note) : null);
+};
+
 /* ---------- page ---------- */
 function render() {
   const L = keys(), main = $("#main");
   main.replaceChildren(
     h("section", { class: "grid" }, L.map(summaryCard)),
+    h("section", { class: "grid" }, L.map(checkinCard)),
     h("section", {}, longChart(L)),
     h("section", { class: "grid" }, L.map(weeklyChart)),
     h("section", {}, trendChart(L)),

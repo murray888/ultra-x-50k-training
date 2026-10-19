@@ -80,3 +80,17 @@ footer { margin-top: 30px; color: var(--ink-2); font-size: .9rem; }
 footer ul { padding-left: 18px; }
 code { background: var(--bg); padding: 1px 5px; border-radius: 4px; }
 @media (max-width: 560px) { h1 { font-size: 1.3rem; } .big { font-size: 1.5rem; } }
+
+.checkin .weeknav { display: flex; align-items: center; gap: 10px; margin: 4px 0 8px; }
+.checkin .weeknav .muted { flex: 1; font-size: .85rem; }
+.ticks { display: grid; gap: 6px; margin: 6px 0 10px; }
+.ticks label { display: flex; gap: 8px; align-items: flex-start; font-size: .92rem; line-height: 1.35; }
+.ticks input { margin-top: 3px; width: 18px; height: 18px; flex: none; }
+.checkin textarea, .checkin .auth input { width: 100%; box-sizing: border-box; font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 8px; }
+.checkin textarea:disabled { opacity: .6; }
+.checkin .actions { display: flex; gap: 10px; align-items: center; margin-top: 8px; flex-wrap: wrap; }
+.checkin .auth { margin-top: 10px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.small { font-size: .82rem; margin-top: 6px; }
+button.primary { font: inherit; padding: 6px 14px; border-radius: 8px; border: 0; background: var(--murray); color: #fff; cursor: pointer; }
+button.primary:disabled { opacity: .45; cursor: default; }
+button.link { font: inherit; background: none; border: 0; padding: 0; color: var(--murray); text-decoration: underline; cursor: pointer; }

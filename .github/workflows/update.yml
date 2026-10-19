@@ -8,7 +8,7 @@ on:
     types: [runs-upload]
   push:
     branches: [main]
-    paths: ["config/**", "site/**", "scripts/**", "runs/**", "requirements.txt", ".github/workflows/**"]
+    paths: ["config/**", "site/**", "scripts/**", "runs/**", "log/**", "requirements.txt", ".github/workflows/**"]
 
 permissions:
   contents: write
