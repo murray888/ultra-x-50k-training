@@ -47,19 +47,19 @@
      ]
     },
     "rich": {
-     "long_km": 5.4,
+     "long_km": 5.5,
      "long_date": "2026-10-24",
      "optional": false,
      "runs": [
       {
        "label": "Tue",
-       "desc": "25 min easy",
-       "km": 3.8
+       "desc": "4 km easy",
+       "km": 4.0
       },
       {
        "label": "Thu",
-       "desc": "25 min easy",
-       "km": 3.8
+       "desc": "4 km easy",
+       "km": 4.0
       }
      ]
     }
@@ -93,19 +93,19 @@
      ]
     },
     "rich": {
-     "long_km": 6.9,
+     "long_km": 7.0,
      "long_date": "2026-10-31",
      "optional": false,
      "runs": [
       {
        "label": "Tue",
-       "desc": "30 min easy",
-       "km": 4.6
+       "desc": "4.5 km easy",
+       "km": 4.5
       },
       {
        "label": "Thu",
-       "desc": "30 min easy + 4 strides",
-       "km": 4.6
+       "desc": "4.5 km easy + 4 strides",
+       "km": 4.5
       }
      ]
     }
@@ -139,19 +139,19 @@
      ]
     },
     "rich": {
-     "long_km": 7.7,
+     "long_km": 7.5,
      "long_date": "2026-11-07",
      "optional": false,
      "runs": [
       {
        "label": "Tue",
-       "desc": "30 min easy",
-       "km": 4.6
+       "desc": "4.5 km easy",
+       "km": 4.5
       },
       {
        "label": "Thu",
-       "desc": "30 min easy + 4 strides",
-       "km": 4.6
+       "desc": "4.5 km easy + 4 strides",
+       "km": 4.5
       }
      ]
     }
@@ -191,13 +191,13 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "30 min easy",
-       "km": 4.6
+       "desc": "4.5 km easy",
+       "km": 4.5
       },
       {
        "label": "Thu",
-       "desc": "30 min easy + 4 strides",
-       "km": 4.6
+       "desc": "4.5 km easy + 4 strides",
+       "km": 4.5
       }
      ]
     }
@@ -237,13 +237,13 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "40 min easy",
-       "km": 6.2
+       "desc": "6 km easy",
+       "km": 6.0
       },
       {
        "label": "Thu",
-       "desc": "35 min easy + 6 strides",
-       "km": 5.4
+       "desc": "5.5 km easy + 6 strides",
+       "km": 5.5
       }
      ]
     }
@@ -283,13 +283,13 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "30 min easy",
-       "km": 4.6
+       "desc": "4.5 km easy",
+       "km": 4.5
       },
       {
        "label": "Thu",
-       "desc": "30 min easy",
-       "km": 4.6
+       "desc": "4.5 km easy",
+       "km": 4.5
       }
      ]
     }
@@ -329,13 +329,13 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "45 min easy",
-       "km": 6.9
+       "desc": "7 km easy",
+       "km": 7.0
       },
       {
        "label": "Thu",
-       "desc": "40 min easy + 6 strides",
-       "km": 6.2
+       "desc": "6 km easy + 6 strides",
+       "km": 6.0
       }
      ]
     }
@@ -375,13 +375,13 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "45 min, last 10 steady",
-       "km": 6.9
+       "desc": "7 km, last 10 min steady",
+       "km": 7.0
       },
       {
        "label": "Thu",
-       "desc": "40 min easy + 6 strides",
-       "km": 6.2
+       "desc": "6 km easy + 6 strides",
+       "km": 6.0
       }
      ]
     }
@@ -421,13 +421,13 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "50 min incl 3 x 8 min tempo",
-       "km": 7.7
+       "desc": "7.5 km incl 3 x 8 min tempo",
+       "km": 7.5
       },
       {
        "label": "Thu",
-       "desc": "40 min incl 6 x 60s hills",
-       "km": 6.2
+       "desc": "6 km incl 6 x 60s hills",
+       "km": 6.0
       }
      ]
     }
@@ -467,13 +467,13 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "40 min easy",
-       "km": 6.2
+       "desc": "6 km easy",
+       "km": 6.0
       },
       {
        "label": "Thu",
-       "desc": "35 min easy",
-       "km": 5.4
+       "desc": "5.5 km easy",
+       "km": 5.5
       }
      ]
     }
@@ -513,13 +513,13 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "55 min incl 20 min tempo",
+       "desc": "8.5 km incl 20 min tempo",
        "km": 8.5
       },
       {
        "label": "Thu",
-       "desc": "45 min incl 8 x 75s hills",
-       "km": 6.9
+       "desc": "7 km incl 8 x 75s hills",
+       "km": 7.0
       }
      ]
     }
@@ -559,13 +559,13 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "60 min incl 2 x 15 min tempo",
-       "km": 9.2
+       "desc": "9 km incl 2 x 15 min tempo",
+       "km": 9.0
       },
       {
        "label": "Thu",
-       "desc": "50 min incl 8 x 90s hills",
-       "km": 7.7
+       "desc": "7.5 km incl 8 x 90s hills",
+       "km": 7.5
       }
      ]
     }
@@ -605,13 +605,13 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "60 min incl 30 min tempo",
-       "km": 9.2
+       "desc": "9 km incl 30 min tempo",
+       "km": 9.0
       },
       {
        "label": "Thu",
-       "desc": "50 min incl 10 x 60s hills",
-       "km": 7.7
+       "desc": "7.5 km incl 10 x 60s hills",
+       "km": 7.5
       }
      ]
     }
@@ -651,13 +651,13 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "60 min steady",
-       "km": 9.2
+       "desc": "9 km steady",
+       "km": 9.0
       },
       {
        "label": "Thu",
-       "desc": "50 min incl 6 x 2 min hills",
-       "km": 7.7
+       "desc": "7.5 km incl 6 x 2 min hills",
+       "km": 7.5
       }
      ]
     }
@@ -697,12 +697,12 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "65 min incl 3 x 10 min tempo",
+       "desc": "10 km incl 3 x 10 min tempo",
        "km": 10.0
       },
       {
        "label": "Thu",
-       "desc": "55 min incl 6 x 2 min hills",
+       "desc": "8.5 km incl 6 x 2 min hills",
        "km": 8.5
       }
      ]
@@ -743,13 +743,13 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "45 min easy",
-       "km": 6.9
+       "desc": "7 km easy",
+       "km": 7.0
       },
       {
        "label": "Thu",
-       "desc": "40 min easy",
-       "km": 6.2
+       "desc": "6 km easy",
+       "km": 6.0
       }
      ]
     }
@@ -789,12 +789,12 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "65 min incl 30 min tempo",
+       "desc": "10 km incl 30 min tempo",
        "km": 10.0
       },
       {
        "label": "Thu",
-       "desc": "55 min incl 8 x 2 min hills",
+       "desc": "8.5 km incl 8 x 2 min hills",
        "km": 8.5
       }
      ]
@@ -835,12 +835,12 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "65 min steady",
+       "desc": "10 km steady",
        "km": 10.0
       },
       {
        "label": "Thu",
-       "desc": "55 min incl 8 x 2 min hills",
+       "desc": "8.5 km incl 8 x 2 min hills",
        "km": 8.5
       }
      ]
@@ -881,12 +881,12 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "65 min incl 2 x 15 min tempo",
+       "desc": "10 km incl 2 x 15 min tempo",
        "km": 10.0
       },
       {
        "label": "Thu",
-       "desc": "55 min incl 8 x 2 min hills",
+       "desc": "8.5 km incl 8 x 2 min hills",
        "km": 8.5
       }
      ]
@@ -927,13 +927,13 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "45 min easy",
-       "km": 6.9
+       "desc": "7 km easy",
+       "km": 7.0
       },
       {
        "label": "Thu",
-       "desc": "40 min easy",
-       "km": 6.2
+       "desc": "6 km easy",
+       "km": 6.0
       }
      ]
     }
@@ -973,12 +973,12 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "65 min incl 30 min tempo",
+       "desc": "10 km incl 30 min tempo",
        "km": 10.0
       },
       {
        "label": "Thu",
-       "desc": "55 min incl 8 x 2 min hills",
+       "desc": "8.5 km incl 8 x 2 min hills",
        "km": 8.5
       }
      ]
@@ -1019,12 +1019,12 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "70 min steady",
-       "km": 10.8
+       "desc": "11 km steady",
+       "km": 11.0
       },
       {
        "label": "Thu",
-       "desc": "55 min incl 6 x 3 min hills",
+       "desc": "8.5 km incl 6 x 3 min hills",
        "km": 8.5
       }
      ]
@@ -1065,13 +1065,13 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "60 min incl 20 min tempo",
-       "km": 9.2
+       "desc": "9 km incl 20 min tempo",
+       "km": 9.0
       },
       {
        "label": "Thu",
-       "desc": "50 min easy",
-       "km": 7.7
+       "desc": "7.5 km easy",
+       "km": 7.5
       }
      ]
     }
@@ -1111,13 +1111,13 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "55 min incl 15 min tempo",
+       "desc": "8.5 km incl 15 min tempo",
        "km": 8.5
       },
       {
        "label": "Thu",
-       "desc": "45 min easy",
-       "km": 6.9
+       "desc": "7 km easy",
+       "km": 7.0
       }
      ]
     }
@@ -1157,13 +1157,13 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "45 min incl 3 x 5 min at race effort",
-       "km": 6.9
+       "desc": "7 km incl 3 x 5 min at race effort",
+       "km": 7.0
       },
       {
        "label": "Thu",
-       "desc": "40 min easy",
-       "km": 6.2
+       "desc": "6 km easy",
+       "km": 6.0
       }
      ]
     }
@@ -1203,13 +1203,13 @@
      "runs": [
       {
        "label": "Tue",
-       "desc": "40 min easy + 4 strides",
-       "km": 6.2
+       "desc": "6 km easy + 4 strides",
+       "km": 6.0
       },
       {
        "label": "Thu",
-       "desc": "25 min easy shakeout",
-       "km": 3.8
+       "desc": "4 km easy shakeout",
+       "km": 4.0
       }
      ]
     }

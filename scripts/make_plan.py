@@ -42,7 +42,7 @@ MURRAY_A.update({6: "Easy (cutback)", 10: "Easy (cutback)", 16: "Easy (cutback)"
 MURRAY_LONG_OVERRIDE = {1: (12, "2026-10-25"), 2: (13, "2026-10-30"), 3: (0, None)}
 MURRAY_OPTIONAL = {3}
 
-# Rich's plan (from his own Ultra X Spring 50K plan): Tue / Thu sessions in minutes.
+# Rich's plan (from his own Ultra X Spring 50K plan): Tue / Thu sessions were in minutes; make_plan converts them to km (rich_session).
 RICH_ROWS = [
     ("25 min easy", 25, "25 min easy", 25), ("30 min easy", 30, "30 min easy + 4 strides", 30),
     ("30 min easy", 30, "30 min easy + 4 strides", 30), ("30 min easy", 30, "30 min easy + 4 strides", 30),
@@ -60,7 +60,16 @@ RICH_ROWS = [
     ("45 min incl 3 x 5 min at race effort", 45, "40 min easy", 40), ("40 min easy + 4 strides", 40, "25 min easy shakeout", 25),
 ]
 RICH_EASY_PACE = 6.5   # min/km, used only to turn Rich's minute-based weekday runs into km
-RICH_LONG_OVERRIDE = {1: 5.4, 2: 6.9, 3: 7.7}  # his 35, 45 and 50 minute runs, in km
+RICH_LONG_OVERRIDE = {1: 5.5, 2: 7.0, 3: 7.5}  # his 35, 45 and 50 minute runs, in km (nearest 0.5)
+
+
+def rich_session(desc, minutes):
+    """Rich's weekday sessions are distance-based: total km (nearest 0.5), with any tempo/hill/stride
+    segments still described by effort and time, as in Murray's plan."""
+    import re
+    km = round(minutes / RICH_EASY_PACE * 2) / 2
+    d = re.sub(r"^\d+ min", f"{km:g} km", desc).replace(", last 10 steady", ", last 10 min steady")
+    return d, km
 
 
 def apply_swaps():
@@ -102,8 +111,8 @@ def build():
                            "runs": [{"label": "Run A", "desc": MURRAY_A[w], "km": a},
                                     {"label": "Run B", "desc": "Easy, HR up to 150", "km": b}]},
                 "rich": {"long_km": r_long, "long_date": sat.isoformat(), "optional": False,
-                         "runs": [{"label": "Tue", "desc": tue, "km": round(tue_m / RICH_EASY_PACE, 1)},
-                                  {"label": "Thu", "desc": thu, "km": round(thu_m / RICH_EASY_PACE, 1)}]},
+                         "runs": [{"label": "Tue", "desc": rich_session(tue, tue_m)[0], "km": rich_session(tue, tue_m)[1]},
+                                  {"label": "Thu", "desc": rich_session(thu, thu_m)[0], "km": rich_session(thu, thu_m)[1]}]},
             }})
     return {
         "race": {"name": "Ultra X Spring Trail Series 50km", "date": RACE_DATE.isoformat(), "distance_km": 50,
