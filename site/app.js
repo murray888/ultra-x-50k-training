@@ -177,6 +177,10 @@ function summaryCard(key) {
   return card;
 }
 
+const runsCell = (key, p) => {
+  const rs = (D.acts[key] || []).filter(r => r.date >= p.monday && r.date <= p.sunday);
+  return rs.length ? h("span", {}, rs.map(r => h("small", { class: "runline" }, `${fmtDate(r.date)}: ${km(r.distance_km)}`))) : "–";
+};
 function planTable(key) {
   const a = D.adj.athletes[key], pw = D.plan.weeks;
   const chip = st => h("span", { class: "chip " + ({ Done: "good", Partial: "warn", Missed: "bad" }[st] || "") },
@@ -191,12 +195,13 @@ function planTable(key) {
         : km(w.planned_long)),
       h("td", {}, w.actual_long ? km(w.actual_long) : "–"),
       h("td", {}, km(w.actual_km), h("small", {}, "plan " + km(w.planned_km))),
+      h("td", {}, runsCell(key, p)),
       h("td", {}, chip(w.status)),
       h("td", {}, checkinCell(key, w, at)),
       h("td", {}, at.runs.map(r => h("small", {}, `${r.label}: ${r.desc} (${km(r.km)})`)), p.note ? h("small", {}, p.note) : null));
   });
   return h("div", {}, h("h2", {}, `${a.name}: week by week`), h("div", { class: "table-wrap" },
-    h("table", {}, h("thead", {}, h("tr", {}, ["Wk", "Long run", "Long (target)", "Long (actual)", "Distance", "Status", "Check-in", "Sessions and notes"].map(x => h("th", {}, x)))), h("tbody", {}, rows))));
+    h("table", {}, h("thead", {}, h("tr", {}, ["Wk", "Long run", "Long (target)", "Long (actual)", "Distance", "Runs logged", "Status", "Check-in", "Sessions and notes"].map(x => h("th", {}, x)))), h("tbody", {}, rows))));
 }
 
 function routeSvg(route) {
