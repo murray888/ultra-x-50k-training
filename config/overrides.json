@@ -1,8 +1,19 @@
 {
-  "flags": {"murray": [], "rich": []},
+  "flags": {
+    "murray": [],
+    "rich": []
+  },
   "weeks": {
     "murray": {},
     "rich": {}
   },
-  "_help": "Add \"niggle\" to an athlete's flags to cut the next three weeks of long runs by 25%. To force a distance: {\"weeks\": {\"murray\": {\"9\": {\"long_km\": 12, \"reason\": \"flu\"}}}}"
+  "_help": "Add \"niggle\" to an athlete's flags to cut the next three weeks of long runs by 25%. To force a distance: {\"weeks\": {\"murray\": {\"9\": {\"long_km\": 12, \"reason\": \"flu\"}}}} Excused weeks (travel, illness): {\"excused\": {\"murray\": [1,2,3]}} are not counted as misses.",
+  "excused": {
+    "murray": [
+      1,
+      2,
+      3
+    ],
+    "rich": []
+  }
 }

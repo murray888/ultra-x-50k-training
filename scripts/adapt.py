@@ -10,6 +10,9 @@ Writes data/adjusted.json. Rules (all visible in the site as "reasons"):
      long runs for the next three weeks are cut by 15%.
   5. Niggle flag (config/overrides.json): long runs for the next three weeks are cut by 25%.
   6. Nothing is ever increased above the plan, and race week is never changed.
+  7. Baseline: the longest run in the 5 weeks before the plan starts seeds the reference.
+  8. Excused weeks (config/overrides.json "excused": travel, illness) are never counted as misses
+     or towards the volume rule; a long run done in one still counts towards the reference.
 Manual overrides live in config/overrides.json.
 """
 import json
@@ -47,6 +50,10 @@ def adapt_athlete(plan, key, runs, overrides, now):
     metric_ceiling = ceiling or 150
     flags_manual = overrides.get("flags", {}).get(key, [])
     forced = overrides.get("weeks", {}).get(key, {})
+    excused = set(overrides.get("excused", {}).get(key, []))
+    no_data = not runs          # nothing uploaded yet: do not adjust or judge anything
+    if no_data:
+        excused = {w["week"] for w in plan["weeks"]}
     weeks = plan["weeks"]
     now_iso = now.isoformat()
 
@@ -61,7 +68,7 @@ def adapt_athlete(plan, key, runs, overrides, now):
         if len(hot) >= 2:
             flags.append(("fatigue", 0.90, f"{len(hot)} runs of 8 km+ in the last 14 days averaged more than "
                           f"8 bpm above the easy ceiling ({ceiling}). Long runs cut by 10% for three weeks."))
-    done = [w for w in weeks if w["sunday"] < now_iso and not w["athletes"][key]["optional"]]
+    done = [w for w in weeks if w["sunday"] < now_iso and not w["athletes"][key]["optional"] and w["week"] not in excused]
     last2 = done[-2:]
     if len(last2) == 2 and all(
             sum(r["distance_km"] for r in week_runs(runs, w)) < 0.6 * planned_km(w["athletes"][key]) for w in last2):
@@ -74,6 +81,10 @@ def adapt_athlete(plan, key, runs, overrides, now):
         mult *= m
 
     history, out = [], []
+    start = dt.date.fromisoformat(weeks[0]["monday"])
+    pre = [r["distance_km"] for r in runs if 0 < (start - dt.date.fromisoformat(r["date"])).days <= 35]
+    if pre:
+        history.append({"week": 0, "actual": max(pre), "completion": 1.0})
     for w in weeks:
         a = w["athletes"][key]
         wr = week_runs(runs, w)
@@ -112,12 +123,19 @@ def adapt_athlete(plan, key, runs, overrides, now):
                 adjusted = fo["long_km"]
                 reasons = [f"Manual override: {fo.get('reason', 'set in overrides.json')}"]
 
-        if completed and planned_long and not w["athletes"][key]["optional"] and not w["cutback"]:
+        if completed and w["week"] in excused:
+            if actual_long:
+                history.append({"week": w["week"], "actual": actual_long, "completion": 1.0})
+        elif completed and planned_long and not w["athletes"][key]["optional"] and not w["cutback"]:
             history.append({"week": w["week"], "actual": actual_long, "completion": actual_long / planned_long})
         elif completed and planned_long and w["cutback"]:
             pass  # cutback weeks do not set the reference
 
-        if completed:
+        if completed and no_data:
+            status = "No data"
+        elif completed and w["week"] in excused and planned_long and actual_long < 0.5 * planned_long:
+            status = "Away"
+        elif completed:
             if not planned_long:
                 status = "Skipped (planned)"
             else:
