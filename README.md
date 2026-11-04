@@ -2,10 +2,10 @@
 
 A static site, rebuilt by GitHub Actions, that tracks Murray's and Rich's runs against a shared, distance-based
 26-week plan for the **Ultra X Spring Trail Series 50km on Saturday 17 April 2027**, and adjusts the upcoming long runs
-from what was actually run. Run data comes from Apple Health, sent by an iPhone Shortcut each week.
+from what was actually run. Run data comes from Apple Health: each week you run `scripts/upload_runs.py` on a fresh Health export (the iPhone Shortcut route cannot read workouts, so it is not used).
 
 ```
-iPhone Shortcut --> repository_dispatch --> scripts/ingest.py --> runs/<athlete>.json (committed)
+upload_runs.py --> repository_dispatch --> scripts/ingest.py --> runs/<athlete>.json (committed)
 runs/*.json --> scripts/load_runs.py --> scripts/adapt.py (rules) --> scripts/commentary.py (optional Claude note)
                                                                  \--> scripts/build_site.py --> GitHub Pages
 ```
@@ -18,9 +18,9 @@ runs/*.json --> scripts/load_runs.py --> scripts/adapt.py (rules) --> scripts/co
 
 ## One-off setup
 1. **Settings > Pages > Source: GitHub Actions.** Rich needs write access: **Settings > Collaborators > add Rich.**
-2. Each athlete creates a fine-grained token at <https://github.com/settings/personal-access-tokens/new>:
-   *Only select repositories* > this repo, permission **Contents: Read and write**, 1-year expiry. Keep it private; it goes only into their own Shortcut.
-3. Each athlete builds the weekly Shortcut (see `SHORTCUT.md`) and sets it to run automatically on Sunday 19:00.
+2. Each token holder creates a fine-grained token (a collaborator cannot; the repo owner makes one for them) at <https://github.com/settings/personal-access-tokens/new>:
+   *Only select repositories* > this repo, permission **Contents: Read and write**, 1-year expiry. Keep it private; it stays in the terminal environment variable, never in chat or the repo.
+3. Each week: export Health data on the iPhone, unzip it on a computer, then `export GITHUB_TOKEN=...` and `python3 scripts/upload_runs.py path/to/export.xml --athlete murray` (add `--dry-run` to preview).
 4. Optional: add an `ANTHROPIC_API_KEY` repository secret to enable the weekly Claude coaching note.
 5. **Actions > Update training site > Run workflow** for the first build. Site: `https://<username>.github.io/<repository>/`.
 
